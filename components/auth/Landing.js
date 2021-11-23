@@ -1,5 +1,5 @@
 import React from 'react'
-import {StyleSheet,Text,View,Button,ImageBackground } from 'react-native'
+import { StyleSheet,Text,View,Button,ImageBackground } from 'react-native'
 import backgroundImage from '../../assets/background.png'
 
 
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     container:{
         flex:1, 
         justifyContent: 'center',
+        
     },
     image: {
         width: '100%',

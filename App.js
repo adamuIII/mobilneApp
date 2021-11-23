@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet} from 'react-native';
@@ -12,7 +13,10 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Landing">
+      <Stack.Navigator 
+      //Animacja zmiany ekranu
+      screenOptions={{gestureEnabled: true, gestureDirection: "vertical"}} 
+      initialRouteName="Landing">
         <Stack.Screen name="Landing" component={LandingScreen} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
