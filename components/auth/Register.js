@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {View,Button,TextInput,StyleSheet} from 'react-native'
+import {View,TouchableOpacity,TextInput,StyleSheet,Text} from 'react-native'
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
@@ -46,10 +46,14 @@ export class Register extends Component {
                 secureTextEntry={true}
                 onChangeText={(password)=>this.setState({password})}/>
 
-                <Button
+                <TouchableOpacity
+
+                    style={styles.signup}
                     onPress={()=>this.onSignUp()}
-                    title="Sign up"
-                />
+                    title="Sign up">
+                    <Text style={styles.textStyles}>Register</Text>
+                    </TouchableOpacity>
+                
 
             </View>
         )
@@ -57,7 +61,17 @@ export class Register extends Component {
 }
 
 const styles = StyleSheet.create({
- 
+ container:{
+     display:'flex',
+     flexDirection:"column",
+     justifyContent:"center",
+
+     
+ },
+ signup:{
+    color:"black",
+    backgroundColor:"#32a895"
+}
 })
 
 export default Register
