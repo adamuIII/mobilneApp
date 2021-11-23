@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {View,Button,TextInput} from 'react-native'
+import {View,Button,TextInput,StyleSheet} from 'react-native'
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
@@ -32,7 +32,7 @@ export class Register extends Component {
 
     render() {
         return (
-            <View>
+            <View style={styles.container}>
                 <TextInput
                 placeholder="name"
                 onChangeText={(name)=>this.setState({name})}/>
@@ -55,5 +55,9 @@ export class Register extends Component {
         )
     }
 }
+
+const styles = StyleSheet.create({
+ 
+})
 
 export default Register
