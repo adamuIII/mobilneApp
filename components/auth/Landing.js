@@ -3,7 +3,7 @@ import { StyleSheet,Text,View,Button,ImageBackground } from 'react-native'
 import backgroundImage from '../../assets/background.png'
 
 
-export default function Landing(navigation) {
+export default function Landing({navigation}) {
     return (
         <View style={styles.container}>
             <ImageBackground source={require=(backgroundImage)} resizeMode="cover" style={styles.image}>
@@ -22,6 +22,7 @@ export default function Landing(navigation) {
 
     )
 }
+
 
 
 const styles = StyleSheet.create({
