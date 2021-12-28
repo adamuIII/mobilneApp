@@ -4,13 +4,14 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
-export class Register extends Component {
+export class Login extends Component {
     constructor(props){
         super(props);
 
         this.state={
-            password: '',
-            name: ''
+            email: '',
+            password: ''
+            
 
         }
         this.onSignUp=this.onSignUp.bind(this)
@@ -18,8 +19,8 @@ export class Register extends Component {
 
 
     onSignUp(){
-        const{email,password,name}=this.state; 
-        firebase.auth().createUserWithEmailAndPassword(email,password)
+        const{email,password}=this.state; 
+        firebase.auth().signInWithEmailAndPassword(email,password)
         .then((result)=>{
             console.log(result)
         })
@@ -33,8 +34,8 @@ export class Register extends Component {
         return (
             <View style={styles.container}>
                 <TextInput
-                placeholder="name"
-                onChangeText={(name)=>this.setState({name})}/>
+                placeholder="email"
+                onChangeText={(email)=>this.setState({email})}/>
 
                 <TextInput
                 placeholder="password"
@@ -45,7 +46,7 @@ export class Register extends Component {
 
                     style={styles.signup}
                     onPress={()=>this.onSignUp()}
-                    title="Sign up">
+                    title="Sign in">
                     <Text style={styles.textStyles}>Login</Text>
                     </TouchableOpacity>
                 
@@ -69,4 +70,4 @@ const styles = StyleSheet.create({
 }
 })
 
-export default Register
+export default Login
