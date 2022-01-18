@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     },
     image: {
         width: '100%',
-        height: '100%',
+        height: '115%',
         flex: 1,
         justifyContent:"center"
       },
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
 
         display:"flex",
         justifyContent:'center',
-        marginTop:"120%"
+        marginTop:"100%"
  
     },
 
