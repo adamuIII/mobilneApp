@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { Camera } from 'expo-camera';
 import { Button} from 'react-native-paper'
 
 export default function App() {
   const [hasPermission, setHasPermission] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
+  const [photo, setPhoto] = useState('https://images.obi.pl/product/PL/745x320/657878_1.jpg')
 
   
 
   useEffect(() => {
     (async () => {
-      const { status } = await Camera.requestPermissionsAsync();
+      const { status } = await Camera.requestCameraPermissionsAsync();
       setHasPermission(status === 'granted');
     })();
   }, []);
+
 
   if (hasPermission === null) {
     return <View />;
@@ -25,10 +27,16 @@ export default function App() {
   return (
     <View style={{flex:1}}>
        <View style={styles.cameraContainer}>
+
+         <Image style={{flex:1}} source={{uri:photo}}/>
          <Camera 
          style={styles.fixedRatio}
+         ratio={'1:1'}
          type={type}
-         ratio={'1:1'}/>
+         ref={ref => {
+          this.camera = ref;
+        }}
+         />
          
  
       </View> 
@@ -43,6 +51,18 @@ export default function App() {
             }}>
             <Text> Flip </Text>
           </Button>
+          <Button
+            title="Take Picture"
+            onPress={async () =>{
+              if(this.camera){
+                let photo = await this.camera.takePictureAsync();
+                setPhoto(photo.uri);
+              }
+            }
+            }>
+            <Text> Take Picture </Text>
+          </Button>
+        
     </View>
   );
 }

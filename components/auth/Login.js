@@ -33,11 +33,11 @@ export class Login extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <TextInput
+                <TextInput style={styles.inputView}
                 placeholder="email"
                 onChangeText={(email)=>this.setState({email})}/>
 
-                <TextInput
+                <TextInput style={styles.inputView}
                 placeholder="password"
                 secureTextEntry={true}
                 onChangeText={(password)=>this.setState({password})}/>
@@ -58,16 +58,21 @@ export class Login extends Component {
 
 const styles = StyleSheet.create({
  container:{
-     display:'flex',
-     flexDirection:"column",
-     justifyContent:"center",
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
 
      
  },
  signup:{
     color:"black",
-    backgroundColor:"#32a895"
-}
+    backgroundColor:"#32a895",
+    textAlign: 'center'
+},
+
+
+
 })
 
 export default Login
