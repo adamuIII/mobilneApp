@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import {View,TouchableOpacity,TextInput,StyleSheet,Text} from 'react-native'
+import {View,TouchableOpacity,TextInput,StyleSheet,Text,ImageBackground} from 'react-native'
 import firebase from 'firebase/compat/app';
+import backgroundImage from '../../assets/backgroundlogreg.png'
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
@@ -42,15 +43,16 @@ export class Register extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <TextInput
+                 <ImageBackground source={require=(backgroundImage)} resizeMode="cover" style={styles.image}>
+                <TextInput  style={styles.inputView}
                 placeholder="name"
                 onChangeText={(name)=>this.setState({name})}/>
 
-                <TextInput
+                <TextInput  style={styles.inputView}
                 placeholder="email"
                 onChangeText={(email)=>this.setState({email})}/>
 
-                <TextInput
+                <TextInput  style={styles.inputView}
                 placeholder="password"
                 secureTextEntry={true}
                 onChangeText={(password)=>this.setState({password})}/>
@@ -63,7 +65,7 @@ export class Register extends Component {
                     <Text style={styles.textStyles}>Register</Text>
                     </TouchableOpacity>
                 
-
+                    </ImageBackground>
             </View>
         )
     }
@@ -71,16 +73,59 @@ export class Register extends Component {
 
 const styles = StyleSheet.create({
  container:{
-     display:'flex',
-     flexDirection:"column",
-     justifyContent:"center",
+     flex:1,
+
 
      
  },
+
+ image: {
+
+    width: '100%',
+    height: '130%',
+    justifyContent:"center"
+  },
+
+
  signup:{
-    color:"black",
-    backgroundColor:"#32a895"
-}
+    backgroundColor:'#74a5ad',
+    paddingBottom:10,
+    paddingTop:10,
+    borderStyle:"solid",
+    borderRadius:10,
+    maxWidth:"50%",
+    marginTop:20,
+    textAlign:'center',
+    marginLeft:"25%"
+},
+
+inputView:{
+    backgroundColor:'rgb(171,219,227)',
+    paddingBottom:10,
+    paddingTop:10,
+    borderStyle:"solid",
+    borderRadius:10,
+    maxWidth:"50%",
+    marginTop:20,
+    textAlign:'center',
+    marginLeft:"25%"
+},
+
+TextInput: {
+    height: 50,
+    flex: 1,
+    padding: 10,
+    marginLeft: 20,
+  },
+
+
+  textStyles:{
+    textAlign:'center',
+    padding:5,
+  }
+
 })
+
+
 
 export default Register

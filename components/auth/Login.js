@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {View,TouchableOpacity,TextInput,StyleSheet,Text,ImageBackground} from 'react-native'
-import backgroundImage from '../../assets/background.png'
+import backgroundImage from '../../assets/backgroundlogreg.png'
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
@@ -65,14 +65,14 @@ const styles = StyleSheet.create({
      
  },
  image: {
-    paddingTop:400,
+
     width: '100%',
     height: '130%',
     justifyContent:"center"
   },
 
  signup:{
-    backgroundColor:'rgb(171,219,227)',
+    backgroundColor:'#74a5ad',
     paddingBottom:10,
     paddingTop:10,
     borderStyle:"solid",
@@ -101,6 +101,11 @@ TextInput: {
     marginLeft: 20,
   },
 
+ 
+  textStyles:{
+    textAlign:'center',
+    padding:5,
+  }
 
 
 })

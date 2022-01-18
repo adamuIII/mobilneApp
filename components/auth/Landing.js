@@ -71,18 +71,14 @@ const styles = StyleSheet.create({
         
 
     },
-    b1:{
-        
-    },
 
-    b2:{
-        
-    },
 
     textStyles:{
         fontFamily:"Verdana",
         color:"#454954",
-        fontWeight:"bold"
+        fontWeight:"bold",
+        textAlign:'center',
+        padding:3,
     }
 
 
