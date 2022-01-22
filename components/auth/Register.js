@@ -45,15 +45,15 @@ export class Register extends Component {
             <View style={styles.container}>
                  <ImageBackground source={require=(backgroundImage)} resizeMode="cover" style={styles.image}>
                 <TextInput  style={styles.inputView}
-                placeholder="name"
+                placeholder="Name"
                 onChangeText={(name)=>this.setState({name})}/>
 
                 <TextInput  style={styles.inputView}
-                placeholder="email"
+                placeholder="Email address"
                 onChangeText={(email)=>this.setState({email})}/>
 
                 <TextInput  style={styles.inputView}
-                placeholder="password"
+                placeholder="Password"
                 secureTextEntry={true}
                 onChangeText={(password)=>this.setState({password})}/>
 
