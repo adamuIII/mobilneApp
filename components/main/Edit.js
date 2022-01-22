@@ -6,7 +6,7 @@ import { Button} from 'react-native-paper'
 export default function App() {
   const [hasPermission, setHasPermission] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
-  const [photo, setPhoto] = useState('https://img.redro.pl/plakaty/default-profile-picture-avatar-photo-placeholder-vector-illustration-700-197279432.jpg')
+  const [photo, setPhoto] = useState(null)
 
   
 
@@ -28,7 +28,7 @@ export default function App() {
     <View style={{flex:1}}>
        <View style={styles.cameraContainer}>
 
-         <Image style={{flex:1}} source={{uri:photo}}/>
+         
          <Camera 
          style={styles.fixedRatio}
          ratio={'1:1'}
@@ -37,11 +37,10 @@ export default function App() {
           this.camera = ref;
         }}
          />
-         
  
       </View> 
       <Button
-            title="Flip Image"
+            title="Change Camera"
             onPress={() => {
               setType(
                 type === Camera.Constants.Type.back
@@ -49,7 +48,7 @@ export default function App() {
                   : Camera.Constants.Type.back
               );
             }}>
-            <Text> Flip </Text>
+            <Text> Change Camera </Text>
           </Button>
           <Button
             title="Take Picture"
@@ -70,7 +69,6 @@ export default function App() {
 const styles = StyleSheet.create({
     cameraContainer:{
         flex:1,
-        flexDirection:'row'
     
     },
     fixedRatio:{

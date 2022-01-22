@@ -11,6 +11,7 @@ import Reducers from './components/redux/reducers';
 import thunk from 'redux-thunk'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import EditScreen from './components/main/Edit'
 import LandingScreen from './components/auth/Landing';
 import RegisterScreen from './components/auth/Register';
 import MainScreen from './components/Main'

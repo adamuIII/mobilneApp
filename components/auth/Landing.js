@@ -4,6 +4,7 @@ import backgroundImage from '../../assets/background.png'
 
 
 export default function Landing({navigation}) {
+
     return (
         <View style={styles.container}>
             <ImageBackground source={require=(backgroundImage)} resizeMode="cover" style={styles.image}>

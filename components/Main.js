@@ -17,13 +17,13 @@ export class Main extends Component {
     render() {
         return (
             <Tab.Navigator initialRouteName='Feed'>
-            <Tab.Screen name="Magazyn" component={FeedScreen} options={{
+            <Tab.Screen name="Warehouse" component={FeedScreen} options={{
                 tabBarIcon: ({color,size})=>(
                    <MaterialCommunityIcons name='garage' color={color} size={20}></MaterialCommunityIcons> 
                 )
             }}/>
 
-            <Tab.Screen name="Zarządzaj"  component={EditScreen} options={{
+            <Tab.Screen name="Manage"  component={EditScreen} options={{
                 tabBarIcon: ({color,size})=>(
                    <MaterialCommunityIcons name='tune' color={color} size={20}></MaterialCommunityIcons> 
                    )
