@@ -6,7 +6,9 @@ export default function Feed() {
     return (
         <View>
             <StatusBar hidden />
-
+            <Text style={{color:'#fff'}}>
+            Nothing here!    
+            </Text>
         </View>
     )
 }
