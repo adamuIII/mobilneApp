@@ -33,7 +33,7 @@ export class Register extends Component {
         })
         .catch((error)=>{
             console.log(error)
-            
+            alert("Error! Your email address should look like this: example@example.com. Password should be longer than 8 characters.")
         })
     }
 
