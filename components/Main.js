@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux'
 import { fetchUser } from './redux/action'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
+
 import FeedScreen from './main/Feed'
 import EditScreen from './main/Edit'
 import ScanScreen from './main/Scan'
@@ -38,6 +39,7 @@ export class Main extends Component {
                    
             }}/>
           </Tab.Navigator>
+          
         )
     }
 }

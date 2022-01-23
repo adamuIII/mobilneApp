@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { Camera } from 'expo-camera';
 import { Button} from 'react-native-paper'
+import { StatusBar } from 'expo-status-bar'
 
 export default function App() {
   const [hasPermission, setHasPermission] = useState(null);
@@ -61,7 +62,7 @@ export default function App() {
             }>
             <Text> Take Picture </Text>
           </Button>
-        
+          <StatusBar hidden />
     </View>
   );
 }
