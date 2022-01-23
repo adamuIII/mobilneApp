@@ -9,6 +9,7 @@ export default function App() {
   const [hasPermission, setHasPermission] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
   const [photo, setPhoto] = useState(null)
+  const [preview, setPreview] = useState(false)
   const isFocused = useIsFocused();
   
 
@@ -31,7 +32,7 @@ export default function App() {
        <View style={styles.cameraContainer}>
 
          
-         { isFocused && <Camera 
+         { isFocused, !preview && <Camera 
          style={styles.fixedRatio}
          ratio={'1:1'}
          type={type}
@@ -39,9 +40,12 @@ export default function App() {
           this.camera = ref;
         }}
          />}
- 
+
+        {preview && <Image style={styles.fixedRatio} source={{uri: photo}} />}
+        
+
       </View> 
-      <Button
+      {!preview && <Button
             title="Change Camera"
             onPress={() => {
               setType(
@@ -51,18 +55,32 @@ export default function App() {
               );
             }}>
             <Text> Change Camera </Text>
-          </Button>
-          <Button
+          </Button>}
+      {!preview && <Button
             title="Take Picture"
             onPress={async () =>{
               if(this.camera){
                 let photo = await this.camera.takePictureAsync();
                 setPhoto(photo.uri);
+                setPreview(true);
               }
             }
             }>
             <Text> Take Picture </Text>
-          </Button>
+          </Button>}
+      
+      {preview && <Button
+            title="Accept"
+            onPress={() => {}}>
+            <Text> Accept photo </Text>
+          </Button>}
+      {preview && <Button
+            title="Retake"
+            onPress={() =>{setPreview(false)}}>
+            <Text> Retake photo </Text>
+          </Button>}      
+      
+
           <StatusBar hidden />
     </View>
   );
