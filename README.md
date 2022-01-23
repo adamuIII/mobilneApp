@@ -8,7 +8,7 @@ lista rzeczy zrobionych:
 - skanowanie kodow qr (dziala i skanuje, za to nie zwraca nic innego z wyjatkiem informacji o barcode)
 
 lista rzeczy do zrobienia:
-- podglad zdjec i mozliwosc zrobienia zdjecia ponownie (nowy ekran? idk)
+- (ZROBIONE) podglad zdjec i mozliwosc zrobienia zdjecia ponownie (nowy ekran? idk)
 - mozliwosc dodawania nowych przedmiotow do firebase po zrobieniu zdjecia
 - za pomoca kodow QR zwracac przedmioty z bazy, albo chociaz informacje o przedmiotach z bazy
 - wyswietlanie przedmiotow w magazynie w Feed za pomoca ListView
