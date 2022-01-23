@@ -7,6 +7,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 
 import FeedScreen from './main/Feed'
 import EditScreen from './main/Edit'
+import ScanScreen from './main/Scan'
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -16,7 +17,14 @@ export class Main extends Component {
     }
     render() {
         return (
-            <Tab.Navigator initialRouteName='Feed'>
+            <Tab.Navigator initialRouteName='Warehouse'>
+
+            <Tab.Screen name="QR Scanner" component={ScanScreen} options={{
+                tabBarIcon: ({color,size})=>(
+                   <MaterialCommunityIcons name='qrcode' color={color} size={20}></MaterialCommunityIcons> 
+                )
+            }}/>
+
             <Tab.Screen name="Warehouse" component={FeedScreen} options={{
                 tabBarIcon: ({color,size})=>(
                    <MaterialCommunityIcons name='garage' color={color} size={20}></MaterialCommunityIcons> 
