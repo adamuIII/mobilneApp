@@ -3,12 +3,13 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import { Camera } from 'expo-camera';
 import { Button} from 'react-native-paper'
 import { StatusBar } from 'expo-status-bar'
+import { useIsFocused } from '@react-navigation/native'
 
 export default function App() {
   const [hasPermission, setHasPermission] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
   const [photo, setPhoto] = useState(null)
-
+  const isFocused = useIsFocused();
   
 
   useEffect(() => {
@@ -30,14 +31,14 @@ export default function App() {
        <View style={styles.cameraContainer}>
 
          
-         <Camera 
+         { isFocused && <Camera 
          style={styles.fixedRatio}
          ratio={'1:1'}
          type={type}
          ref={ref => {
           this.camera = ref;
         }}
-         />
+         />}
  
       </View> 
       <Button
