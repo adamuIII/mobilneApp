@@ -9,7 +9,7 @@ lista rzeczy zrobionych:
 
 lista rzeczy do zrobienia:
 - (ZROBIONE) podglad zdjec i mozliwosc zrobienia zdjecia ponownie (nowy ekran? idk)
-- mozliwosc dodawania nowych przedmiotow do firebase po zrobieniu zdjecia
+- (ZROBIONE W 90%?) mozliwosc dodawania nowych przedmiotow do firebase po zrobieniu zdjecia
 - za pomoca kodow QR zwracac przedmioty z bazy, albo chociaz informacje o przedmiotach z bazy
 - wyswietlanie przedmiotow w magazynie w Feed za pomoca ListView
 
