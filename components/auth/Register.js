@@ -43,7 +43,7 @@ export class Register extends Component {
     render() {
         return (
             <View style={styles.container}>
-                 <ImageBackground source={require=(backgroundImage)} resizeMode="cover" style={styles.image}>
+                <ImageBackground source={require=(backgroundImage)} resizeMode="cover" style={styles.image}>
                 <TextInput  style={styles.inputView}
                 placeholder="Name"
                 onChangeText={(name)=>this.setState({name})}/>
@@ -63,7 +63,7 @@ export class Register extends Component {
                     onPress={()=>this.onSignUp()}
                     title="Sign up">
                     <Text style={styles.textStyles}>Register</Text>
-                    </TouchableOpacity>
+                </TouchableOpacity>
                 
                     </ImageBackground>
             </View>

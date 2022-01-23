@@ -21,6 +21,7 @@ export default function Scan() {
       const handleBarCodeScanned = ({ type, data }) => {
         setScanned(true);
         alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+
       };
     
       if (hasPermission === null) {
@@ -36,9 +37,10 @@ export default function Scan() {
                     onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
                     style={StyleSheet.absoluteFillObject}
                 />}
-                {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
-            <StatusBar hidden />
+                <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />
+                <StatusBar hidden />
         </View>
+       
     )
 }
 
