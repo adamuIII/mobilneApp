@@ -5,7 +5,7 @@ import { Button} from 'react-native-paper'
 import { StatusBar } from 'expo-status-bar'
 import { useIsFocused } from '@react-navigation/native'
 import firebase from 'firebase/compat/app';
-import { MediaLibrary } from 'expo-media-library';
+import * as FileSystem from 'expo-file-system';
 import 'firebase/compat/firestore';
 
 
@@ -22,7 +22,7 @@ export default function App() {
   const [amount, setAmount] = useState('')
   const [name, setName] = useState('')
   const isFocused = useIsFocused();
-  //const [status, requestPermission] = MediaLibrary.usePermissions();
+  const [base64, setBase64] = useState('');
   
   
 
@@ -47,7 +47,8 @@ export default function App() {
          
          { isFocused && !preview && !accept && <Camera 
          style={styles.fixedRatio}
-         ratio={'1:1'}
+         ratio={'4:3'}
+         pictureSize={'1280x720'}
          type={type}
          ref={ref => {
           this.camera = ref;
@@ -73,9 +74,10 @@ export default function App() {
             title="Take Picture"
             onPress={async () =>{
               if(this.camera){
-                let photo = await this.camera.takePictureAsync();
+                let photo = await this.camera.takePictureAsync({quality: 0});
                 setPhoto(photo.uri);
-                //alert(photo.uri);
+                const base64 = await FileSystem.readAsStringAsync(photo.uri, { encoding: 'base64' });
+                setBase64(base64);
                 setPreview(true);
               }
             }
@@ -86,7 +88,6 @@ export default function App() {
       {preview && !accept && <Button
             title="Accept"
             onPress={async () => {
-              await MediaLibrary.saveToLibraryAsync(photo.uri);
               isAccepted(true);
               setPreview(false);
             }}>
@@ -113,7 +114,7 @@ export default function App() {
                       firebase.firestore().collection('items').add({
                         amount: amount,
                         name: name,
-                        photo: 'http://i.wpimg.pl/1920x0/portal-abczdrowie.wpcdn.pl/imageCache/2019/01/03/krolik-miniaturka_8a40.jpg'
+                        photo: base64
                       });
                       isAccepted(false);
                     }}

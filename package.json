@@ -35,7 +35,8 @@
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
     "expo-barcode-scanner": "~11.1.2",
-    "expo-media-library": "~13.0.3"
+    "expo-media-library": "~13.0.3",
+    "expo-file-system": "~13.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
