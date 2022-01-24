@@ -5,6 +5,7 @@ import { Button} from 'react-native-paper'
 import { StatusBar } from 'expo-status-bar'
 import { useIsFocused } from '@react-navigation/native'
 import firebase from 'firebase/compat/app';
+import { MediaLibrary } from 'expo-media-library';
 import 'firebase/compat/firestore';
 
 
@@ -21,6 +22,7 @@ export default function App() {
   const [amount, setAmount] = useState('')
   const [name, setName] = useState('')
   const isFocused = useIsFocused();
+  //const [status, requestPermission] = MediaLibrary.usePermissions();
   
   
 
@@ -83,7 +85,8 @@ export default function App() {
       
       {preview && !accept && <Button
             title="Accept"
-            onPress={() => {
+            onPress={async () => {
+              await MediaLibrary.saveToLibraryAsync(photo.uri);
               isAccepted(true);
               setPreview(false);
             }}>
