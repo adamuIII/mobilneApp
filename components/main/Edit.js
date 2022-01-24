@@ -38,7 +38,7 @@ export default function App() {
     return <View />;
   }
   if (hasPermission === false) {
-    return <Text>No access to camera</Text>;
+    return <Text style={{fontSize: 30, color: 'red'}}>No access to camera</Text>;
   }
   return (
     <View style={{flex:1}}>
