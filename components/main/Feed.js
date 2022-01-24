@@ -1,6 +1,7 @@
 import React from 'react'
 import {View,Text} from 'react-native'
 import { StatusBar } from 'expo-status-bar'
+import firebase from 'firebase/compat/app'
 
 export default function Feed() {
     return (
