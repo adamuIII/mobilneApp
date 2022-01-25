@@ -1,39 +1,8 @@
-import React from 'react'
-import {View,Text,Button} from 'react-native'
-import { StatusBar } from 'expo-status-bar'
-import firebase from 'firebase/compat/app'
+import React from 'react';
+import FetchListScreen from './FeedBackend'
 
-export default function Feed() {
-
-   const fetchowanko = async ()=>{
-        firebase.firestore().collection('items').doc('1h5SfRUZtqZFOdxocBax').get().then(doc => {
-           if(doc.exists){
-            console.log(doc.data().name);  
-            return (
-                <View>
-                <Text>{doc.data().name}</Text>
-                </View>
-            );
-              
-            }
-
-                
-            
-        }
-        
-        )
-
-    };
-        
-
-    return (
-        <View>
-            <StatusBar hidden />
-            <Button
-            title="costam"
-            onPress={() =>{fetchowanko()}}>
-          </Button>
-          <Text> a </Text>
-        </View>
-    )
+export default function App() {
+  return (
+    <FetchListScreen/>
+  );
 }
