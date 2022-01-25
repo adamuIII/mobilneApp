@@ -8,10 +8,22 @@ export default function Feed() {
    const fetchowanko = async ()=>{
         firebase.firestore().collection('items').doc('1h5SfRUZtqZFOdxocBax').get().then(doc => {
            if(doc.exists){
-              console.log(doc.data().name);  
+            console.log(doc.data().name);  
+            return (
+                <View>
+                <Text>{doc.data().name}</Text>
+                </View>
+            );
+              
             }
+
+                
+            
         }
-        )};
+        
+        )
+
+    };
         
 
     return (
