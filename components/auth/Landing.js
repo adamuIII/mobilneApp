@@ -28,6 +28,14 @@ export default function Landing({navigation}) {
                 </TouchableOpacity>
             </View>
 
+                <View style={styles.b3}>
+                    <TouchableOpacity
+                        style={styles.button}
+                        title="About"
+                        onPress={()=>navigation.navigate("About")}>
+                        <Text style={styles.textStyles}>About</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
 
             </ImageBackground>

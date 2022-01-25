@@ -14,6 +14,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import EditScreen from './components/main/Edit'
 import LandingScreen from './components/auth/Landing';
 import RegisterScreen from './components/auth/Register';
+import About from './components/auth/About';
 import MainScreen from './components/Main'
 import LoginScreen from './components/auth/Login';
 import firebase from 'firebase/compat/app';
@@ -95,6 +96,7 @@ export class App extends Component {
             <Stack.Screen name="Landing" component={LandingScreen} options={{headerShown: false}}/>
             <Stack.Screen name="Register" component={RegisterScreen}/>
             <Stack.Screen name="Login" component={LoginScreen}/>
+            <Stack.Screen name="About" component={About}/>
     
     
           </Stack.Navigator>
