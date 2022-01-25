@@ -1,5 +1,5 @@
 import React from 'react'
-import {View,TouchableOpacity,TextInput,StyleSheet,Text,ImageBackground} from 'react-native'
+import {View,TouchableOpacity,StyleSheet,Text,ImageBackground} from 'react-native'
 import backgroundImage from '../../assets/backgroundlogreg.png'
 
 export default function About({navigation}) {
@@ -32,9 +32,6 @@ export default function About({navigation}) {
                         </TouchableOpacity>
                     </View>
                 </View>
-            <Text style={{color:'#F12'}}>
-                Cool project Bloodtrail
-            </Text>
             </ImageBackground>
         </View>
     )
@@ -43,9 +40,6 @@ export default function About({navigation}) {
 const styles = StyleSheet.create({
     container:{
         flex:1,
-
-
-
     },
 
     image: {
@@ -53,19 +47,6 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '130%',
         justifyContent:"center"
-    },
-
-
-    signup:{
-        backgroundColor:'#74a5ad',
-        paddingBottom:10,
-        paddingTop:10,
-        borderStyle:"solid",
-        borderRadius:10,
-        maxWidth:"50%",
-        marginTop:20,
-        textAlign:'center',
-        marginLeft:"25%"
     },
 
     inputView:{
