@@ -1,40 +1,60 @@
 import React from 'react'
-import {View, TouchableOpacity, Linking, StyleSheet, Image, ImageBackground} from 'react-native'
+import {View, TouchableOpacity, Linking, StyleSheet, Image, ImageBackground, ScrollView} from 'react-native'
 import backgroundImage from '../../assets/backgroundlogreg.png'
 
 export default function DS() {
     return(
         <View style={styles.container}>
             <ImageBackground source={require=(backgroundImage)} resizeMode="cover" style={styles.imageb}>
-                <View style={styles.container} title="Container">
-                    <View style={styles.top} >
-                        <TouchableOpacity
-                            onPress={ ()=>{ Linking.openURL('https://github.com/adamuIII')}}>
-                            <Image
-                                style={styles.imagel}
-                                source={{uri: 'https://cdn-icons-png.flaticon.com/512/5968/5968866.png'}}
-                            />
-                        </TouchableOpacity>
+                <ScrollView style={styles.scrollView}>
+                    <View style={styles.container} title="Container">
+                        <View style={styles.top} >
+                            <TouchableOpacity
+                                onPress={ ()=>{ Linking.openURL('https://github.com/adamuIII')}}>
+                                <Image
+                                    style={styles.imagel}
+                                    source={{uri: 'https://cdn-icons-png.flaticon.com/512/5968/5968866.png'}}
+                                />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.middle} >
+                            <TouchableOpacity
+                                onPress={ ()=>{ Linking.openURL('https://www.facebook.com/adam.rzepka.121')}}>
+                                <Image
+                                    style={styles.imagel}
+                                    source={{uri: 'https://cdn-icons-png.flaticon.com/512/124/124010.png'}}
+                                />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.middle} >
+                            <TouchableOpacity
+                                onPress={ ()=>{ Linking.openURL('https://csgorankings.com/profile/76561198224724832')}}>
+                                <Image
+                                    style={styles.imagel}
+                                    source={{uri: 'https://cdn2.iconfinder.com/data/icons/popular-games-1/50/csgo_squircle-512.png'}}
+                                />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.middle} >
+                            <TouchableOpacity
+                                onPress={ ()=>{ Linking.openURL('https://steamcommunity.com/profiles/76561198224724832')}}>
+                                <Image
+                                    style={styles.imagel}
+                                    source={{uri: 'https://cdn-icons.flaticon.com/png/512/3670/premium/3670382.png?token=exp=1643129532~hmac=2e2aac0dbb20483b8a64c7462a05044e'}}
+                                />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.bottom}>
+                            <TouchableOpacity
+                                onPress={ ()=>{ Linking.openURL('https://www.instagram.com/adam.rzepka/')}}>
+                                <Image
+                                    style={styles.imagel}
+                                    source={{uri: 'https://cdn-icons-png.flaticon.com/512/174/174855.png'}}
+                                />
+                            </TouchableOpacity>
+                        </View>
                     </View>
-                    <View style={styles.middle} >
-                        <TouchableOpacity
-                            onPress={ ()=>{ Linking.openURL('https://www.linkedin.com/in/david-salwa/')}}>
-                            <Image
-                                style={styles.imagel}
-                                source={{uri: 'https://cdn-icons-png.flaticon.com/512/174/174857.png'}}
-                            />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.bottom}>
-                        <TouchableOpacity
-                            onPress={ ()=>{ Linking.openURL('https://www.instagram.com/adam.rzepka/')}}>
-                            <Image
-                                style={styles.imagel}
-                                source={{uri: 'https://cdn-icons-png.flaticon.com/512/174/174855.png'}}
-                            />
-                        </TouchableOpacity>
-                    </View>
-                </View>
+                </ScrollView>
             </ImageBackground>
         </View>
     )
@@ -51,11 +71,11 @@ const styles = StyleSheet.create({
         justifyContent:"center"
     },
     imagel:{
-        paddingBottom:100,
-        paddingTop:100,
+        paddingBottom:20,
+        paddingTop:20,
         borderStyle:"solid",
         borderRadius:10,
-        maxWidth:200,
+        maxWidth:20,
         marginTop:20,
         textAlign:'center',
         marginLeft:"25%"
@@ -71,6 +91,9 @@ const styles = StyleSheet.create({
         marginTop:20,
         textAlign:'center',
         marginLeft:"25%"
+    },
+    scrollView:{
+        marginHorizontal: 20,
     },
 
     TextInput: {

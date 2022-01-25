@@ -7,12 +7,48 @@ export default function BT() {
         <View style={styles.container}>
             <ImageBackground source={require=(backgroundImage)} resizeMode="cover" style={styles.imageb}>
                 <View style={styles.container} title="Container">
+                    <View style={styles.middle} >
+                        <TouchableOpacity
+                            onPress={ ()=>{ Linking.openURL('https://www.twitch.tv/kefak123')}}>
+                            <Image
+                                style={styles.imagel}
+                                source={{uri: 'https://cdn-icons.flaticon.com/png/512/3291/premium/3291659.png?token=exp=1643128726~hmac=3315c0fff3b6eff070c2dd6424b9b857'}}
+                            />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.middle} >
+                        <TouchableOpacity
+                            onPress={ ()=>{ Linking.openURL('https://csgorankings.com/profile/76561198120034184')}}>
+                            <Image
+                                style={styles.imagel}
+                                source={{uri: 'https://cdn2.iconfinder.com/data/icons/popular-games-1/50/csgo_squircle-512.png'}}
+                            />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.middle} >
+                        <TouchableOpacity
+                            onPress={ ()=>{ Linking.openURL('https://steamcommunity.com/id/kefaczek')}}>
+                            <Image
+                                style={styles.imagel}
+                                source={{uri: 'https://cdn-icons.flaticon.com/png/512/3670/premium/3670382.png?token=exp=1643129532~hmac=2e2aac0dbb20483b8a64c7462a05044e'}}
+                            />
+                        </TouchableOpacity>
+                    </View>
                     <View style={styles.top} >
                         <TouchableOpacity
                             onPress={ ()=>{ Linking.openURL('https://github.com/kefaczur')}}>
                             <Image
                                 style={styles.imagel}
                                 source={{uri: 'https://cdn-icons-png.flaticon.com/512/5968/5968866.png'}}
+                            />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.middle} >
+                        <TouchableOpacity
+                            onPress={ ()=>{ Linking.openURL('https://euw.op.gg/summoner/userName=drmeowmeowkitty')}}>
+                            <Image
+                                style={styles.imagel}
+                                source={{uri: 'https://opgg-static.akamaized.net/images/profile_icons/profileIcon29.jpg'}}
                             />
                         </TouchableOpacity>
                     </View>

@@ -7,7 +7,7 @@ export default function DS() {
             <View style={styles.container}>
                 <ImageBackground source={require=(backgroundImage)} resizeMode="cover" style={styles.imageb}>
                     <View style={styles.container} title="Container">
-                        <View style={styles.top} >
+
                             <TouchableOpacity
                                 onPress={ ()=>{ Linking.openURL('https://github.com/bugajjj')}}>
                                 <Image
@@ -15,13 +15,31 @@ export default function DS() {
                                     source={{uri: 'https://cdn-icons-png.flaticon.com/512/5968/5968866.png'}}
                                 />
                             </TouchableOpacity>
-                        </View>
+
                         <View style={styles.middle} >
                             <TouchableOpacity
                                 onPress={ ()=>{ Linking.openURL('https://www.linkedin.com/in/david-salwa/')}}>
                                 <Image
                                     style={styles.imagel}
                                     source={{uri: 'https://cdn-icons-png.flaticon.com/512/174/174857.png'}}
+                                />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.middle} >
+                            <TouchableOpacity
+                                onPress={ ()=>{ Linking.openURL('https://csgorankings.com/profile/76561198220737064')}}>
+                                <Image
+                                    style={styles.imagel}
+                                    source={{uri: 'https://cdn2.iconfinder.com/data/icons/popular-games-1/50/csgo_squircle-512.png'}}
+                                />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.middle} >
+                            <TouchableOpacity
+                                onPress={ ()=>{ Linking.openURL('https://steamcommunity.com/id/skacz/')}}>
+                                <Image
+                                    style={styles.imagel}
+                                    source={{uri: 'https://cdn-icons.flaticon.com/png/512/3670/premium/3670382.png?token=exp=1643129532~hmac=2e2aac0dbb20483b8a64c7462a05044e'}}
                                 />
                             </TouchableOpacity>
                         </View>
