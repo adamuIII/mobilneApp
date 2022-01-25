@@ -26,7 +26,7 @@ export default function BT() {
                                 onPress={ ()=>{ Linking.openURL('https://steamcommunity.com/id/kefaczek')}}>
                                 <Image
                                     style={styles.imagel}
-                                    source={{uri: 'https://cdn-icons.flaticon.com/png/512/3670/premium/3670382.png?token=exp=1643129532~hmac=2e2aac0dbb20483b8a64c7462a05044e'}}
+                                    source={{uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/240px-Steam_icon_logo.svg.png'}}
                                 />
                             </TouchableOpacity>
                             <TouchableOpacity
@@ -80,7 +80,8 @@ const styles = StyleSheet.create({
         borderStyle:"solid",
         borderRadius:10,
         maxWidth:200,
-        marginTop:20,
+        marginTop:0,
+        marginBottom:20,
         textAlign:'center',
         marginLeft:"25%"
     },
@@ -108,6 +109,10 @@ const styles = StyleSheet.create({
     textStyles:{
         textAlign:'center',
         padding:5,
+    },
+
+    scrollView: {
+        marginBottom: 200,
     }
 
 })

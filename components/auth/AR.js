@@ -33,7 +33,7 @@ export default function DS() {
                                 onPress={ ()=>{ Linking.openURL('https://steamcommunity.com/profiles/76561198224724832')}}>
                                 <Image
                                     style={styles.imagel}
-                                    source={{uri: 'https://cdn-icons.flaticon.com/png/512/3670/premium/3670382.png?token=exp=1643129532~hmac=2e2aac0dbb20483b8a64c7462a05044e'}}
+                                    source={{uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/240px-Steam_icon_logo.svg.png'}}
                                 />
                             </TouchableOpacity>
                             <TouchableOpacity
@@ -61,12 +61,13 @@ const styles = StyleSheet.create({
         justifyContent:"center"
     },
     imagel:{
-        paddingBottom:20,
-        paddingTop:20,
+        paddingBottom:100,
+        paddingTop:100,
         borderStyle:"solid",
         borderRadius:10,
-        maxWidth:20,
-        marginTop:20,
+        maxWidth:200,
+        marginTop:0,
+        marginBottom:20,
         textAlign:'center',
         marginLeft:"25%"
     },
@@ -82,9 +83,6 @@ const styles = StyleSheet.create({
         textAlign:'center',
         marginLeft:"25%"
     },
-    scrollView:{
-        marginHorizontal: 20,
-    },
 
     TextInput: {
         height: 50,
@@ -97,6 +95,10 @@ const styles = StyleSheet.create({
     textStyles:{
         textAlign:'center',
         padding:5,
+    },
+
+    scrollView: {
+        marginBottom: 200,
     }
 
 })
