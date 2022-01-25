@@ -26,11 +26,12 @@ class FetchListScreen extends Component {
       getitemsData = (querySnapshot) => {
         const items = [];
         querySnapshot.forEach((res) => {
-          const { amount, name } = res.data();
+          const { amount, name, photo } = res.data();
           items.push({
             key: res.id,
             amount,
-            name
+            name,
+            photo
           });
         });
         this.setState({
