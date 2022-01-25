@@ -25,8 +25,8 @@ export default function Landing({navigation}) {
                     title="Register"
                     onPress={()=>navigation.navigate("Register")}>
                     <Text style={styles.textStyles}>Register</Text>
-                </TouchableOpacity>
-            </View>
+                    </TouchableOpacity>
+                </View>
 
                 <View style={styles.b3}>
                     <TouchableOpacity

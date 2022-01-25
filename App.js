@@ -15,6 +15,9 @@ import EditScreen from './components/main/Edit'
 import LandingScreen from './components/auth/Landing';
 import RegisterScreen from './components/auth/Register';
 import About from './components/auth/About';
+import AR from './components/about/AR';
+import DS from './components/about/DS';
+import BT from './components/about/BT';
 import MainScreen from './components/Main'
 import LoginScreen from './components/auth/Login';
 import firebase from 'firebase/compat/app';
