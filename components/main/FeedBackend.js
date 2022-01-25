@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView, ActivityIndicator, View } from 'react-native';
+import { StyleSheet, ScrollView, ActivityIndicator, View,Image } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import firebase from 'firebase/compat/app';
+
 
 
 class FetchListScreen extends Component {
@@ -26,11 +27,12 @@ class FetchListScreen extends Component {
       getitemsData = (querySnapshot) => {
         const items = [];
         querySnapshot.forEach((res) => {
-          const { amount, name } = res.data();
+          const { amount, name,photo } = res.data();
           items.push({
             key: res.id,
             amount,
-            name
+            name,
+            photo
           });
         });
         this.setState({
@@ -38,7 +40,8 @@ class FetchListScreen extends Component {
           isLoading: false
        });
       }
-    
+      
+
     
     
       render() {
@@ -60,15 +63,29 @@ class FetchListScreen extends Component {
                       <ListItem.Content>
                         <ListItem.Title>{res.name}</ListItem.Title>
                         <ListItem.Subtitle>{res.amount}</ListItem.Subtitle>
+                        <ListItem.Subtitle>{
+                          <View >
+                          <Image 
+                          style={styles.img}
+                          source={{uri: `data:image/jpeg;base64,${res.photo}`}}
+                          />
+                          </View>}
+                        </ListItem.Subtitle>
+
                       </ListItem.Content>
                       <ListItem.Chevron 
                          color="black" 
                       />
                     </ListItem>
+                    
                   );
+                  
                 })
+                
               }
+              
           </ScrollView>
+          
         );
       }
     }
@@ -76,7 +93,7 @@ class FetchListScreen extends Component {
     const styles = StyleSheet.create({
       wrapper: {
        flex: 1,
-       paddingBottom: 22
+       marginTop:20,
       },
       loader: {
         position: 'absolute',
@@ -86,7 +103,13 @@ class FetchListScreen extends Component {
         right: 0,
         top: 0,
         bottom: 0,
-      }
+      },
+      img: {
+        width: 193,
+        height: 110,
+      },
     })
+
+
 
 export default FetchListScreen;
