@@ -1,9 +1,8 @@
 import React from 'react'
 import {View,TouchableOpacity,TextInput,StyleSheet,Text,ImageBackground} from 'react-native'
-import { StatusBar } from 'expo-status-bar'
 import backgroundImage from '../../assets/backgroundlogreg.png'
 
-export default function About() {
+export default function About({navigation}) {
     return (
         <View style={styles.container}>
             <ImageBackground source={require=(backgroundImage)} resizeMode="cover" style={styles.image}>
@@ -12,7 +11,7 @@ export default function About() {
                         <TouchableOpacity
                             style={styles.button}
                             title="Adam Rzepka"
-                            onPress={()=>navigation.navigate("./about/AR")}>
+                            onPress={()=>navigation.navigate("AR")}>
                             <Text style={styles.textStyles}>Adam Rzepka</Text>
                         </TouchableOpacity>
                     </View>
@@ -20,7 +19,7 @@ export default function About() {
                         <TouchableOpacity
                             style={styles.button}
                             title="David Salwa"
-                            onPress={()=>navigation.navigate("./about/DS")}>
+                            onPress={()=>navigation.navigate("DS")}>
                             <Text style={styles.textStyles}>David Salwa</Text>
                         </TouchableOpacity>
                     </View>

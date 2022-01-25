@@ -15,9 +15,9 @@ import EditScreen from './components/main/Edit'
 import LandingScreen from './components/auth/Landing';
 import RegisterScreen from './components/auth/Register';
 import About from './components/auth/About';
-import AR from './components/about/AR';
-import DS from './components/about/DS';
-import BT from './components/about/BT';
+import AR from './components/auth/AR';
+import DS from './components/auth/DS';
+import BT from './components/auth/BT';
 import MainScreen from './components/Main'
 import LoginScreen from './components/auth/Login';
 import firebase from 'firebase/compat/app';
@@ -100,7 +100,9 @@ export class App extends Component {
             <Stack.Screen name="Register" component={RegisterScreen}/>
             <Stack.Screen name="Login" component={LoginScreen}/>
             <Stack.Screen name="About" component={About}/>
-    
+            <Stack.Screen name="AR" component={AR}/>
+            <Stack.Screen name="DS" component={DS}/>
+            <Stack.Screen name="BT" component={BT}/>
     
           </Stack.Navigator>
         </NavigationContainer>
